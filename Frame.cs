@@ -98,7 +98,7 @@ namespace Renderer
                     colorMatrix[row, col] = (ct!=0)? lineColor: new MyColor(0,0,0);
                     ct++;
                 }
-                Console.WriteLine("Drawing Line");
+                
                 if (x0 == x1 && y0 == y1)
                 {
                     break;

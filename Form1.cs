@@ -39,12 +39,24 @@ namespace Renderer
 
         private void AnimationTimer_Tick(object sender, EventArgs e)
         {
-            // Replace with your 3D point.
-            pointIn3DSpace1 += new Vector3(.5f, 0, 0);
-            pointIn3DSpace2 += new Vector3(.5f, 0, 0);
-            pointIn3DSpace3 += new Vector3(.5f, 0, 0);
-            pointIn3DSpace4 += new Vector3(.5f, 0, 0);
+            // Get the mouse position in screen coordinates.
+            Point screenMousePos = Control.MousePosition;
 
+            // Convert the screen coordinates to client coordinates (relative to your form).
+            Point clientMousePos = PointToClient(screenMousePos);
+
+            // Now, clientMousePos contains the mouse position relative to your form.
+            int mouseX = clientMousePos.X;
+            int mouseY = clientMousePos.Y;
+
+            // You can use mouseX and mouseY in your code as needed.
+
+            // Replace with your 3D point.
+            pointIn3DSpace1 += new Vector3((mouseX - 500) / 100, 0, 0);
+            pointIn3DSpace2 += new Vector3((mouseX - 500) / 100, 0, 0);
+            pointIn3DSpace3 += new Vector3((mouseX - 500) / 100, 0, 0);
+            pointIn3DSpace4 += new Vector3((mouseX - 500) / 100, 0, 0);
+            Console.WriteLine("Mouse X: " + mouseX);
             Vector3 screenCenter = new Vector3(0.0f, 0.0f, 0.0f); // Replace with your screen center.
             Vector3 screenNormal = new Vector3(0.0f, 0.0f, 1.0f); // Replace with your screen normal vector.
 
@@ -53,11 +65,6 @@ namespace Renderer
             Vector2 intersection3 = Geometry.FindIntersectionOnScreen(pointIn3DSpace3, screenCenter, screenNormal);
             Vector2 intersection4 = Geometry.FindIntersectionOnScreen(pointIn3DSpace4, screenCenter, screenNormal);
 
-
-            Console.WriteLine($"Intersection Point on Screen 1: ({intersection1.X}, {intersection1.Y})");
-            Console.WriteLine($"Intersection Point on Screen 2: ({intersection2.X}, {intersection2.Y})");
-            Console.WriteLine($"Intersection Point on Screen 3: ({intersection3.X}, {intersection3.Y})");
-            Console.WriteLine($"Intersection Point on Screen 4: ({intersection4.X}, {intersection4.Y})");
 
 
             // Update the frame for animation
