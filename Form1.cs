@@ -18,7 +18,7 @@ namespace Renderer
         
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
         public Form1()
         {
@@ -52,10 +52,10 @@ namespace Renderer
             // You can use mouseX and mouseY in your code as needed.
 
             // Replace with your 3D point.
-            pointIn3DSpace1 += new Vector3((mouseX - 500) / 100, 0, 0);
-            pointIn3DSpace2 += new Vector3((mouseX - 500) / 100, 0, 0);
-            pointIn3DSpace3 += new Vector3((mouseX - 500) / 100, 0, 0);
-            pointIn3DSpace4 += new Vector3((mouseX - 500) / 100, 0, 0);
+            //pointIn3DSpace1 += new Vector3((mouseX - 500) / 200, 0, 0);
+            //pointIn3DSpace2 += new Vector3((mouseX - 500) / 200, 0, 0);
+            //pointIn3DSpace3 += new Vector3((mouseX - 500) / 200, 0, 0);
+            //pointIn3DSpace4 += new Vector3((mouseX - 500) / 200, 0, 0);
             Console.WriteLine("Mouse X: " + mouseX);
             Vector3 screenCenter = new Vector3(0.0f, 0.0f, 0.0f); // Replace with your screen center.
             Vector3 screenNormal = new Vector3(0.0f, 0.0f, 1.0f); // Replace with your screen normal vector.
